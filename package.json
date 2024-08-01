@@ -10,21 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^8.3.2",
     "@astrojs/tailwind": "^5.1.0",
-    "@editorjs/checklist": "^1.6.0",
-    "@editorjs/delimiter": "^1.4.0",
-    "@editorjs/editorjs": "^2.30.2",
-    "@editorjs/header": "^2.8.7",
-    "@editorjs/inline-code": "^1.5.1",
-    "@editorjs/list": "^1.10.0",
-    "@editorjs/marker": "^1.4.0",
-    "@editorjs/quote": "^2.6.0",
-    "@editorjs/table": "^2.3.0",
-    "@monaco-editor/loader": "^1.4.0",
     "astro": "^4.12.3",
-    "monaco-editor": "^0.50.0",
-    "svelte": "^4.2.18",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.5.4"
   }
