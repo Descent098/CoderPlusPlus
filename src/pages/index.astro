@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const NoNavbar = true;
+---
+
+<Layout title="Welcome to Coder++" noNavbar={true}>
+		<div class="relative px-6 lg:px-8">
+			<div class="h-100 mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
+				<div>
+					<div>
+						<h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl dark:text-gray-100">
+							Welcome to <span class="text-gradient">&lt;/&gt;Coder++</span>
+						</h1>
+						<p class="mt-6 text-lg leading-8 text-gray-600 sm:text-center dark:text-gray-200">
+							It's like <a class="text-primary-400" href="http://kieranwood.ca/Coder" target="_blank" rel="noopener noreferrer">Coder</a>, but better!
+						</p>
+						<div class="mt-8 flex gap-x-4 sm:justify-center">
+							<a href="./create-a-page"
+								class="inline-block rounded-lg bg-primary-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-primary-600 hover:bg-primary-700 hover:ring-primary-700">
+								Create-a-Page
+								<span aria-hidden="true" class="text-primary-200">→</span>
+							</a>
+							<a href="./blog"
+								class="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 dark:text-gray-100 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+								Blog
+								<span aria-hidden="true" class="text-gray-400">→</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</Layout>
+
+<style>
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style>

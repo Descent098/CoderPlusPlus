@@ -1,0 +1,192 @@
+<div class="w-full rounded-lg bg-white shadow text-black">
+    <div id="editorjs"></div>
+</div>
+<slot/>
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+
+<!--Additional Tools-->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Checklist -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Quote -->
+<script is:inline src="https://cdn.jsdelivr.net/gh/paraswaykole/editor-js-code@latest/dist/bundle.js"></script><!-- Code -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Link -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code -->
+
+
+
+<script is:inline>
+// @ts-nocheck
+
+const contentEditor = new EditorJS({ 
+        // Id of Element that should contain the Editor 
+        holder: 'editorjs', 
+        
+        /** 
+         * Available Tools list. 
+         * Pass Tool's class or Settings object for each Tool you want to use 
+         */ 
+        tools: { 
+            heading: Header, 
+            list: List,
+            code:CodeTool,
+            table: Table,
+            marker:Marker,
+            quote:Quote,
+            inlinecode:InlineCode,
+            delimiter: Delimiter,
+            checklist: Checklist
+
+        }, 
+        data: {
+            time: 1552744582955,
+            blocks: [
+                {
+                type: "heading",
+                data: {
+                    level:2,
+                    text:"Your Content here!"
+                    }
+                },
+            ],
+            version: "2.11.10"
+        }
+    })
+</script>
+
+<script is:inline>
+    function extractDatatoHTML(){
+        // Takes in raw output data from editor js and turns it into a list of html strings
+        
+        return contentEditor.save().then((editorData) => {
+            outputData = editorData.blocks
+
+        
+        formattedData = new Array();
+        for (let contentBlock of outputData) {
+            switch (contentBlock.type){
+            case 'heading':
+                if (contentBlock.data.level == 1 && !title){ // h1 and no title yet
+                    title = contentBlock.data.text;
+                }
+                else if (contentBlock.data.level == 3 && !description){
+                    description = contentBlock.data.text;
+                }else{
+                // console.log("heading", contentBlock.data)
+                formattedData.push(`<h${contentBlock.data.level}>${contentBlock.data.text}</h${contentBlock.data.level}>`)
+                }
+                break
+            case 'list': // Parse lists
+                console.log("list", contentBlock.data)
+                if (contentBlock.data.style== "ordered"){
+                    tagname = "ol"
+                }else{
+                    tagname="ul"
+                }
+                items = ""
+                for (let item of contentBlock.data.items) {
+                    items +=`<li>${item}</li>`
+                }
+                formattedData.push(`<${tagname}>${items}</${tagname}>`)
+                break
+            case 'paragraph':
+                //console.log("paragraph", contentBlock.data)
+                formattedData.push(`<p>${contentBlock.data.text}</p>`)
+                break
+            case 'code':
+                //console.log("code", contentBlock.data)
+                // Escape HTML sequences
+                processedData = contentBlock.data.code.replace("<", "&lt;").replace(">", "&gt;")
+                formattedData.push(`
+<pre>
+    <code class="language-${contentBlock.data.languageCode}">${processedData}</code>
+</pre>        `)
+                break
+            case "table": 
+                // console.log("table", contentBlock.data)
+                if (contentBlock.data.withHeadings){
+
+                    table_contents = ""
+                    var isHeading = true;
+                    for (const row of contentBlock.data.content){
+
+                        if (isHeading){
+                            table_contents += '<tr>'
+                            for (const column of row){
+                                table_contents += `<th>${column}</th>`
+                            }
+                            table_contents += "</tr>"
+                            isHeading = false
+                        }else{
+                            table_contents += "<tr>"
+                            for (const column of row){
+                                table_contents += `<td>${column}</td>`
+                            }
+                            table_contents += "</tr>"
+                        }
+                    }
+                    formattedData.push(`<table class="table table-striped">${table_contents} </table>`)
+                } else{
+                    table_contents = ""
+                    for (const row of contentBlock.data.content){
+                        table_contents += "<tr>"
+                        for (const column of row){
+                            table_contents += `<td>${column}</td>`
+                        }
+                        table_contents += "</tr>"
+                    }
+                    formattedData.push(`<table class="table table-striped">${table_contents} </table>`)
+                }
+                break
+            case "delimiter":
+                formattedData.push(`<hr>`)
+                break
+            case "quote":
+                    // console.log("quote", contentBlock.data)
+                    formattedData.push(`<blockquote class="blockquote text-${contentBlock.data.alignment}">
+                        <p>${contentBlock.data.text}</p>
+                        <footer class="blockquote-footer">${contentBlock.data.caption}</footer>
+                    </blockquote>
+                    `)
+                break
+            case "checklist":
+                // console.log("checklist", contentBlock.data)
+                for (const item of contentBlock.data.items){
+                    if (item.checked){
+                        checked = "checked"
+                    }else (
+                        checked= ""
+                    )
+                        formattedData.push(`
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled ${checked}>
+                            <label class="form-check-label" for="flexCheckDisabled">
+                                ${item.text}
+                            </label>
+                        </div>
+                        `)
+                    }
+                break
+
+            }
+        }
+
+
+    
+    let content = "";
+    for (const element of formattedData) {
+        content += element
+    }
+    console.log(content)
+    return content;
+    }).catch((error) => {
+    console.log('Saving failed: ', error)
+    });
+    }
+
+
+</script>

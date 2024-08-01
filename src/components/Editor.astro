@@ -1,0 +1,112 @@
+<div id="monaco" class="h-screen"></div>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs/loader.min.js"></script>
+<script is:inline src="https://unpkg.com/emmet-monaco-es/dist/emmet-monaco.min.js"></script>
+
+
+<script is:inline>
+    const template = `
+&lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Enter a title! | Blog&lt;/title&gt;
+        &lt;!--Bootstrap--&gt;
+        &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"&gt;
+        &lt;link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon"&gt;
+        
+        &lt;!-- Highlightjs--&gt;
+        &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css"&gt;
+        &lt;style&gt;
+            .img-fluid{
+                border-radius: 5%;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;&lt;body&gt;
+
+        &lt;!-- Start of Navbar--&gt;
+        &lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
+            &lt;div class="container-fluid"&gt;
+                &lt;a class="navbar-brand" href="../index.html"&gt;		
+                &lt;p style="font-size:1em; font-weight:bold;display:inline;"&gt;&lt;/&gt;&lt;/p&gt;
+                Coder!  
+                &lt;/a&gt;
+    
+                &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"&gt;
+                &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;div class="collapse navbar-collapse" id="navbarNavDropdown"&gt;
+                &lt;ul class="navbar-nav"&gt;
+                    &lt;li class="nav-item"&gt;
+                        &lt;a class="nav-link active" aria-current="page" href="../index.html"&gt;Home&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class="nav-item"&gt;
+                        &lt;a class="nav-link" href="../blog.html"&gt;Blog&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class="nav-item"&gt;
+                        &lt;a class="nav-link" href="../create-a-page.html"&gt;Create-a-page&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+        &lt;!-- End of Navbar--&gt;    &lt;!-- Start of header--&gt;
+    &lt;div class="container col-xxl-8 px-4 py-5"&gt;
+        &lt;div class="row flex-lg-row-reverse align-items-center g-5 py-5"&gt;
+            &lt;div class="col-10 col-sm-8 col-lg-6"&gt;
+                &lt;img src="https://images.unsplash.com/photo-1589101545496-c5dcd131213f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1058&q=80" class="d-block mx-lg-auto img-fluid" alt="create-a-page" width="700" height="500" loading="lazy"&gt;
+            &lt;/div&gt;
+            &lt;div class="col-lg-6"&gt;
+                &lt;h1 class="display-5 fw-bold lh-1 mb-3"&gt;{{title}}&lt;/h1&gt;
+                &lt;p class="lead"&gt;{{description}}&lt;/p&gt;
+                {{content}}
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;hr&gt;
+    &lt;/div&gt;
+    &lt;!-- End of header--&gt;&lt;!-- Start of content --&gt;
+        &lt;article class="mb-4"&gt;
+            &lt;div class="container px-4 px-lg-5"&gt;
+                &lt;div class="row gx-4 gx-lg-5 justify-content-center"&gt;
+                    &lt;div class="col-md-10 col-lg-8 col-xl-7"&gt;
+                        &lt;!-- Blog content goes Below--&gt;&lt;p&gt;Put your content here!&lt;/p&gt;
+        &lt;!-- Blog content goes Above--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+&lt;!-- End of content--&gt;
+
+&lt;/body&gt;
+
+&lt;!--Bootstrap--&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+
+&lt;!-- Highlight js--&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;hljs.highlightAll();&lt;/script&gt;
+
+&lt;/html&gt;
+`.replaceAll("&lt;","<").replaceAll("&gt;",">")
+</script>
+
+<script is:inline>
+// Setup Monaco
+    require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs',automaticLayout: true }});
+    require(["vs/editor/editor.main"], () => {
+
+    emmetMonaco.emmetHTML(monaco)
+
+    window.templateEditor = monaco.editor.create(document.getElementById("monaco"), {
+        value:template,
+        language:"html",
+        automaticLayout: true,
+	    theme:"vs-dark",
+        fontSize: 24
+        });
+    })
+</script>
+

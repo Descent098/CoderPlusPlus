@@ -1,0 +1,15 @@
+<div class="mb-4 w-full">
+  <label for="title"></label>
+  <input id="title" required="true" value="Title" placeholder="Title" type="text" id="title" class="w-full block rounded-lg border dark:border-none dark:bg-neutral-600 py-[9px] px-3 pr-4 text-sm focus:border-blue-400 focus:ring-1 focus:ring-blue-400 focus:outline-none" />
+</div>
+  
+<div class="mb-4 w-full">
+  <label for="subtitle"></label>
+  <input id="subtitle" required="true" value="Subtitle" placeholder="Subtitle" type="text" id="subtitle" class="w-full block rounded-lg border dark:border-none dark:bg-neutral-600 py-[9px] px-3 pr-4 text-sm focus:border-blue-400 focus:ring-1 focus:ring-blue-400 focus:outline-none" />
+</div>
+
+<script is:inline>
+function getMetadataInformation(){
+  return {"title": document.getElementById("title").value, "subtitle": document.getElementById("subtitle").value}
+}
+</script>
