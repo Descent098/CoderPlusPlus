@@ -1,0 +1,322 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.12.3"><title>Welcome to Coder++</title><link rel="stylesheet" href="/_astro/blog.DHPZalwK.css"><script type="module" src="/_astro/hoisted.864B9Npc.js"></script></head> <body> <div class="px-4 mx-auto max-w-7xl sm:px-6" data-astro-cid-5blmo7yk> <div class="relative pt-6 pb-16 sm:pb-24" data-astro-cid-5blmo7yk> <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global" data-astro-cid-5blmo7yk> <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0" data-astro-cid-5blmo7yk> <div class="flex items-center justify-between w-full md:w-auto" data-astro-cid-5blmo7yk> <a class="text-gradient" href="/" data-astro-cid-5blmo7yk>&lt;/&gt;Coder++
+</a> <div class="flex items-center -mr-2 md:hidden" data-astro-cid-5blmo7yk> <button class="inline-flex items-center justify-center p-2 text-gray-400 bg-gray-50 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-50" type="button" aria-expanded="false" data-astro-cid-5blmo7yk> <span class="sr-only" data-astro-cid-5blmo7yk>Open main menu</span> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-6 h-6" data-astro-cid-5blmo7yk> <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-5blmo7yk></path> </svg> </button> </div> </div> </div> <div class="hidden md:flex md:space-x-10 list-none" data-astro-cid-5blmo7yk> <li data-astro-cid-5blmo7yk> <a href="/blog" class="inline-block rounded-lg bg-primary-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-primary-600 hover:bg-primary-700 hover:ring-primary-700" data-astro-cid-5blmo7yk>
+Blog
+</a> </li> <li data-astro-cid-5blmo7yk> <a href="/create-a-page" class="inline-block rounded-lg bg-primary-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-primary-600 hover:bg-primary-700 hover:ring-primary-700" data-astro-cid-5blmo7yk>
+Create-a-page
+</a> </li> </div> <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0" data-astro-cid-5blmo7yk> <div class="inline-flex rounded-full shadow" data-astro-cid-5blmo7yk></div> </div> </nav> </div> </div>  <main>  <div class="relative px-6 lg:px-8"> <div class="h-100 mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40"> <div> <div> <h1 class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl dark:text-gray-100">
+Create-a-page
+</h1> <p class="mt-6 text-lg leading-8 text-gray-600 sm:text-center dark:text-gray-200">
+Create-a-page is our revolutionary new system that lets you create webpages right in your browser! All you have to do is start typing in the section below, and once done hit the button to save the content as HTML! It's never been so easy!
+</p> </div> </div> </div> </div> <div x-data="{ activeTab:  0 }"> <div class="border-b border-b-gray-100"> <ul class="-mb-px flex items-center gap-4 text-sm font-medium"> <li> <a @click="activeTab = 0" :class="{ 'relative text-primary-700  after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:bg-primary-700': activeTab === 0 }" class="inline-flex cursor-pointer items-center gap-2 px-1 py-3 text-gray-500 hover:text-primary-700"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"> <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM10 12a5.99 5.99 0 00-4.793 2.39A6.483 6.483 0 0010 16.5a6.483 6.483 0 004.793-2.11A5.99 5.99 0 0010 12z" clip-rule="evenodd"></path> </svg> Modify Metadata</a> </li> <li> <a @click="activeTab = 1" :class="{ 'relative text-primary-700  after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:bg-primary-700': activeTab === 1 }" class="inline-flex cursor-pointer items-center gap-2 px-1 py-3 text-gray-500 hover:text-primary-700"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"> <path fill-rule="evenodd" d="M3.5 2A1.5 1.5 0 002 3.5V15a3 3 0 106 0V3.5A1.5 1.5 0 006.5 2h-3zm11.753 6.99L9.5 14.743V6.257l1.51-1.51a1.5 1.5 0 012.122 0l2.121 2.121a1.5 1.5 0 010 2.122zM8.364 18H16.5a1.5 1.5 0 001.5-1.5v-3a1.5 1.5 0 00-1.5-1.5h-2.136l-6 6zM5 16a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path> </svg> Content</a> </li> <li> <a @click="activeTab = 2" :class="{ 'relative text-primary-700  after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-full after:bg-primary-700': activeTab === 2 }" class="inline-flex cursor-pointer items-center gap-2 px-1 py-3 text-gray-500 hover:text-primary-700"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"> <path fill-rule="evenodd" d="M10 2a6 6 0 00-6 6c0 1.887-.454 3.665-1.257 5.234a.75.75 0 00.515 1.076 32.91 32.91 0 003.256.508 3.5 3.5 0 006.972 0 32.903 32.903 0 003.256-.508.75.75 0 00.515-1.076A11.448 11.448 0 0116 8a6 6 0 00-6-6zM8.05 14.943a33.54 33.54 0 003.9 0 2 2 0 01-3.9 0z" clip-rule="evenodd"></path> </svg> Base Template <span class="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-semibold text-gray-500"> 8 </span></a> </li>   </ul> </div> <div class="py-3"> <div :class="{ '!block': activeTab === 0 }" x-show.transition.in.opacity.duration.600="activeTab === 0" class="hidden"><div class="mb-4 w-full"> <label for="title"></label> <input id="title" required="true" value="Title" placeholder="Title" type="text" id="title" class="w-full block rounded-lg border dark:border-none dark:bg-neutral-600 py-[9px] px-3 pr-4 text-sm focus:border-blue-400 focus:ring-1 focus:ring-blue-400 focus:outline-none"> </div> <div class="mb-4 w-full"> <label for="subtitle"></label> <input id="subtitle" required="true" value="Subtitle" placeholder="Subtitle" type="text" id="subtitle" class="w-full block rounded-lg border dark:border-none dark:bg-neutral-600 py-[9px] px-3 pr-4 text-sm focus:border-blue-400 focus:ring-1 focus:ring-blue-400 focus:outline-none"> </div> <script>
+function getMetadataInformation(){
+  return {"title": document.getElementById("title").value, "subtitle": document.getElementById("subtitle").value}
+}
+</script></div> <div :class="{ '!block': activeTab === 1 }" x-show.transition.in.opacity.duration.600="activeTab === 1" class="hidden"><div class="w-full rounded-lg bg-white shadow text-black"> <div id="editorjs"></div> </div>  <button class="btn btn-primary" onclick="saveResult()">Hit me to save html file</button>  <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script> <!--Additional Tools--> <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header --> <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter --> <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List --> <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Checklist --> <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Quote --> <script src="https://cdn.jsdelivr.net/gh/paraswaykole/editor-js-code@latest/dist/bundle.js"></script><!-- Code --> <script src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed --> <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table --> <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Link --> <script src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker --> <script src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code --> <script>
+// @ts-nocheck
+
+const contentEditor = new EditorJS({ 
+        // Id of Element that should contain the Editor 
+        holder: 'editorjs', 
+        
+        /** 
+         * Available Tools list. 
+         * Pass Tool's class or Settings object for each Tool you want to use 
+         */ 
+        tools: { 
+            heading: Header, 
+            list: List,
+            code:CodeTool,
+            table: Table,
+            marker:Marker,
+            quote:Quote,
+            inlinecode:InlineCode,
+            delimiter: Delimiter,
+            checklist: Checklist
+
+        }, 
+        data: {
+            time: 1552744582955,
+            blocks: [
+                {
+                type: "heading",
+                data: {
+                    level:2,
+                    text:"Your Content here!"
+                    }
+                },
+            ],
+            version: "2.11.10"
+        }
+    })
+</script> <script>
+    function extractDatatoHTML(){
+        // Takes in raw output data from editor js and turns it into a list of html strings
+        
+        return contentEditor.save().then((editorData) => {
+            outputData = editorData.blocks
+
+        
+        formattedData = new Array();
+        for (let contentBlock of outputData) {
+            switch (contentBlock.type){
+            case 'heading':
+                if (contentBlock.data.level == 1 && !title){ // h1 and no title yet
+                    title = contentBlock.data.text;
+                }
+                else if (contentBlock.data.level == 3 && !description){
+                    description = contentBlock.data.text;
+                }else{
+                // console.log("heading", contentBlock.data)
+                formattedData.push(`<h${contentBlock.data.level}>${contentBlock.data.text}</h${contentBlock.data.level}>`)
+                }
+                break
+            case 'list': // Parse lists
+                console.log("list", contentBlock.data)
+                if (contentBlock.data.style== "ordered"){
+                    tagname = "ol"
+                }else{
+                    tagname="ul"
+                }
+                items = ""
+                for (let item of contentBlock.data.items) {
+                    items +=`<li>${item}</li>`
+                }
+                formattedData.push(`<${tagname}>${items}</${tagname}>`)
+                break
+            case 'paragraph':
+                //console.log("paragraph", contentBlock.data)
+                formattedData.push(`<p>${contentBlock.data.text}</p>`)
+                break
+            case 'code':
+                //console.log("code", contentBlock.data)
+                // Escape HTML sequences
+                processedData = contentBlock.data.code.replace("<", "&lt;").replace(">", "&gt;")
+                formattedData.push(`
+<pre>
+    <code class="language-${contentBlock.data.languageCode}">${processedData}</code>
+</pre>        `)
+                break
+            case "table": 
+                // console.log("table", contentBlock.data)
+                if (contentBlock.data.withHeadings){
+
+                    table_contents = ""
+                    var isHeading = true;
+                    for (const row of contentBlock.data.content){
+
+                        if (isHeading){
+                            table_contents += '<tr>'
+                            for (const column of row){
+                                table_contents += `<th>${column}</th>`
+                            }
+                            table_contents += "</tr>"
+                            isHeading = false
+                        }else{
+                            table_contents += "<tr>"
+                            for (const column of row){
+                                table_contents += `<td>${column}</td>`
+                            }
+                            table_contents += "</tr>"
+                        }
+                    }
+                    formattedData.push(`<table class="table table-striped">${table_contents} </table>`)
+                } else{
+                    table_contents = ""
+                    for (const row of contentBlock.data.content){
+                        table_contents += "<tr>"
+                        for (const column of row){
+                            table_contents += `<td>${column}</td>`
+                        }
+                        table_contents += "</tr>"
+                    }
+                    formattedData.push(`<table class="table table-striped">${table_contents} </table>`)
+                }
+                break
+            case "delimiter":
+                formattedData.push(`<hr>`)
+                break
+            case "quote":
+                    // console.log("quote", contentBlock.data)
+                    formattedData.push(`<blockquote class="blockquote text-${contentBlock.data.alignment}">
+                        <p>${contentBlock.data.text}</p>
+                        <footer class="blockquote-footer">${contentBlock.data.caption}</footer>
+                    </blockquote>
+                    `)
+                break
+            case "checklist":
+                // console.log("checklist", contentBlock.data)
+                for (const item of contentBlock.data.items){
+                    if (item.checked){
+                        checked = "checked"
+                    }else (
+                        checked= ""
+                    )
+                        formattedData.push(`
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled ${checked}>
+                            <label class="form-check-label" for="flexCheckDisabled">
+                                ${item.text}
+                            </label>
+                        </div>
+                        `)
+                    }
+                break
+
+            }
+        }
+
+
+    
+    let content = "";
+    for (const element of formattedData) {
+        content += element
+    }
+    console.log(content)
+    return content;
+    }).catch((error) => {
+    console.log('Saving failed: ', error)
+    });
+    }
+
+
+</script></div> <div :class="{ '!block': activeTab === 2 }" x-show.transition.in.opacity.duration.600="activeTab === 2" class="hidden"><div id="monaco" class="h-screen"></div> <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs/loader.min.js"></script> <script src="https://unpkg.com/emmet-monaco-es/dist/emmet-monaco.min.js"></script> <script>
+    const template = `
+&lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Enter a title! | Blog&lt;/title&gt;
+        &lt;!--Bootstrap--&gt;
+        &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"&gt;
+        &lt;link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon"&gt;
+        
+        &lt;!-- Highlightjs--&gt;
+        &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css"&gt;
+        &lt;style&gt;
+            .img-fluid{
+                border-radius: 5%;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;&lt;body&gt;
+
+        &lt;!-- Start of Navbar--&gt;
+        &lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
+            &lt;div class="container-fluid"&gt;
+                &lt;a class="navbar-brand" href="../index.html"&gt;		
+                &lt;p style="font-size:1em; font-weight:bold;display:inline;"&gt;&lt;/&gt;&lt;/p&gt;
+                Coder!  
+                &lt;/a&gt;
+    
+                &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"&gt;
+                &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;div class="collapse navbar-collapse" id="navbarNavDropdown"&gt;
+                &lt;ul class="navbar-nav"&gt;
+                    &lt;li class="nav-item"&gt;
+                        &lt;a class="nav-link active" aria-current="page" href="../index.html"&gt;Home&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class="nav-item"&gt;
+                        &lt;a class="nav-link" href="../blog.html"&gt;Blog&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class="nav-item"&gt;
+                        &lt;a class="nav-link" href="../create-a-page.html"&gt;Create-a-page&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
+        &lt;!-- End of Navbar--&gt;    &lt;!-- Start of header--&gt;
+    &lt;div class="container col-xxl-8 px-4 py-5"&gt;
+        &lt;div class="row flex-lg-row-reverse align-items-center g-5 py-5"&gt;
+            &lt;div class="col-10 col-sm-8 col-lg-6"&gt;
+                &lt;img src="https://images.unsplash.com/photo-1589101545496-c5dcd131213f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1058&q=80" class="d-block mx-lg-auto img-fluid" alt="create-a-page" width="700" height="500" loading="lazy"&gt;
+            &lt;/div&gt;
+            &lt;div class="col-lg-6"&gt;
+                &lt;h1 class="display-5 fw-bold lh-1 mb-3"&gt;{{title}}&lt;/h1&gt;
+                &lt;p class="lead"&gt;{{description}}&lt;/p&gt;
+                {{content}}
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;hr&gt;
+    &lt;/div&gt;
+    &lt;!-- End of header--&gt;&lt;!-- Start of content --&gt;
+        &lt;article class="mb-4"&gt;
+            &lt;div class="container px-4 px-lg-5"&gt;
+                &lt;div class="row gx-4 gx-lg-5 justify-content-center"&gt;
+                    &lt;div class="col-md-10 col-lg-8 col-xl-7"&gt;
+                        &lt;!-- Blog content goes Below--&gt;&lt;p&gt;Put your content here!&lt;/p&gt;
+        &lt;!-- Blog content goes Above--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+&lt;!-- End of content--&gt;
+
+&lt;/body&gt;
+
+&lt;!--Bootstrap--&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+
+&lt;!-- Highlight js--&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;hljs.highlightAll();&lt;/script&gt;
+
+&lt;/html&gt;
+`.replaceAll("&lt;","<").replaceAll("&gt;",">")
+</script> <script>
+// Setup Monaco
+    require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs',automaticLayout: true }});
+    require(["vs/editor/editor.main"], () => {
+
+    emmetMonaco.emmetHTML(monaco)
+
+    window.templateEditor = monaco.editor.create(document.getElementById("monaco"), {
+        value:template,
+        language:"html",
+        automaticLayout: true,
+	    theme:"vs-dark",
+        fontSize: 24
+        });
+    })
+</script></div> <div :class="{ '!block': activeTab === 3 }" x-show.transition.in.opacity.duration.600="activeTab === 3" class="hidden"></div> <div :class="{ '!block': activeTab === 4 }" x-show.transition.in.opacity.duration.600="activeTab === 4" class="hidden"></div> </div> </div> <h3>Preview</h3> <iframe class="w-full h-screen rounded-lg bg-white shadow" id="preview"></iframe>  </main>  </body> </html> <!-- File saving--> <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" integrity="sha256-FPJJt8nA+xL4RU6/gsriA8p8xAeLGatoyTjldvQKGdE=" crossorigin="anonymous"></script> <script>
+    async function updatePreview(initial = false){
+        console.log("running")
+    if (!initial){
+        html = window.templateEditor.getValue().replace("{{content}}", await extractDatatoHTML())
+
+    }
+    else{
+        html = template.replace("{{content}}", await extractDatatoHTML())
+    }
+    metadata= getMetadataInformation();
+    title = metadata.title
+    subtitle = metadata.subtitle
+
+    html = html.replace("{{title}}", title)
+    html = html.replace("{{description}}", subtitle)
+
+    document.getElementById("preview").contentDocument.body.innerHTML = html
+}
+
+
+async function saveResult(){
+        // Takes in outputData and shows the result to the result div
+        result = document.getElementById("result")
+        contentHTML = await extractDatatoHTML();
+        metadata= getMetadataInformation();
+        title = metadata.title
+        console.log(contentHTML)
+        console.log(html)
+        if (!title){ // Someone deletes headings
+            title="create-a-page output"
+        }
+        var blob = new Blob([contentHTML], { type: "text/plain;charset=utf-8" });
+        saveAs(blob, title + ".html");
+    }
+    
+    updatePreview(true)
+    setInterval(updatePreview, 3000); 
+</script>
