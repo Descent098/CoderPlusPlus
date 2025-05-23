@@ -61,23 +61,21 @@
             &lt;div class="col-lg-6"&gt;
                 &lt;h1 class="display-5 fw-bold lh-1 mb-3"&gt;{{title}}&lt;/h1&gt;
                 &lt;p class="lead"&gt;{{description}}&lt;/p&gt;
-                {{content}}
+                
             &lt;/div&gt;
         &lt;/div&gt;
         &lt;hr&gt;
     &lt;/div&gt;
-    &lt;!-- End of header--&gt;&lt;!-- Start of content --&gt;
-        &lt;article class="mb-4"&gt;
-            &lt;div class="container px-4 px-lg-5"&gt;
-                &lt;div class="row gx-4 gx-lg-5 justify-content-center"&gt;
-                    &lt;div class="col-md-10 col-lg-8 col-xl-7"&gt;
-                        &lt;!-- Blog content goes Below--&gt;&lt;p&gt;Put your content here!&lt;/p&gt;
-        &lt;!-- Blog content goes Above--&gt;
+    &lt;!-- End of header--&gt;
+    &lt;!-- Start of content --&gt;
+    &lt;div class="row container w-100 justify-content-center"&gt;
+        &lt;article class="col-sm-12 col-xxl-8"&gt;
+            &lt;!-- Blog content goes Below--&gt;
+            {{content}}
+            &lt;!-- Blog content goes Above--&gt;
+        &lt;/article&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/article&gt;
-&lt;!-- End of content--&gt;
+    &lt;!-- End of content--&gt;
 
 &lt;/body&gt;
 
@@ -94,7 +92,7 @@
 </script>
 
 <script is:inline>
-// Setup Monaco
+    // Setup Monaco
     require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.26.1/min/vs',automaticLayout: true }});
     require(["vs/editor/editor.main"], () => {
 

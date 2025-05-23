@@ -2,20 +2,20 @@
     <div id="editorjs"></div>
 </div>
 <slot/>
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+<script is:inline src="/CoderPlusPlus/js/editor/editorjs.js"></script>
 
 <!--Additional Tools-->
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script><!-- Header -->
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script><!-- Delimiter -->
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script><!-- List -->
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@latest"></script><!-- Checklist -->
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script><!-- Quote -->
-<script is:inline src="https://cdn.jsdelivr.net/gh/paraswaykole/editor-js-code@latest/dist/bundle.js"></script><!-- Code -->
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/embed@latest"></script><!-- Embed -->
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script><!-- Table -->
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script><!-- Link -->
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/marker@latest"></script><!-- Marker -->
-<script is:inline src="https://cdn.jsdelivr.net/npm/@editorjs/inline-code@latest"></script><!-- Inline Code -->
+<script is:inline src="/CoderPlusPlus/js/editor/checklist.js"></script><!-- Checklist -->
+<script is:inline src="/CoderPlusPlus/js/editor/delimiter.js"></script><!-- Delimiter -->
+<script is:inline src="/CoderPlusPlus/js/editor/embed.js"></script><!-- Embed -->
+<script is:inline src="/CoderPlusPlus/js/editor/header.js"></script><!-- Header -->
+<script is:inline src="/CoderPlusPlus/js/editor/inline-code.js"></script><!-- Inline Code -->
+<script is:inline src="/CoderPlusPlus/js/editor/link.js"></script><!-- Link -->
+<script is:inline src="/CoderPlusPlus/js/editor/list.js"></script><!-- List -->
+<script is:inline src="/CoderPlusPlus/js/editor/marker.js"></script><!-- Marker -->
+<script is:inline src="/CoderPlusPlus/js/editor/quote.js"></script><!-- Quote -->
+<script is:inline src="/CoderPlusPlus/js/editor/table.js"></script><!-- Table -->
+<script is:inline src="/CoderPlusPlus/js/editor/code.js"></script><!-- Code -->
 
 
 
@@ -32,7 +32,7 @@ const contentEditor = new EditorJS({
          */ 
         tools: { 
             heading: Header, 
-            list: List,
+            list: EditorjsList,
             code:CodeTool,
             table: Table,
             marker:Marker,
@@ -181,7 +181,6 @@ const contentEditor = new EditorJS({
     for (const element of formattedData) {
         content += element
     }
-    console.log(content)
     return content;
     }).catch((error) => {
     console.log('Saving failed: ', error)
